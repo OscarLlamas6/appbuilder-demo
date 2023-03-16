@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:  
+    flask-postgres:
+      container_name: flask-postgres
+      hostname: flask-postgres
+      image: postgres
+      ports:
+        - "5432:5432"
+      restart: unless-stopped
+      env_file:
+        - local.env
+      volumes:
+        - ./initdb.sh:/docker-entrypoint-initdb.d/initdb.sh
+        - ./postgresql/flask-postgres:/var/lib/postgresql/data/
+      networks:
+        - flask-net
+
+networks:
+  flask-net:
+    driver: bridge

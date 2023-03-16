@@ -25,7 +25,6 @@ Simple demo using Flask-AppBuilder python framework
 ## Starting with Flask-AppBuilder (F.A.B)
 
 ```bash
-
 # Creating the app
 > flask fab create-app
 
@@ -34,6 +33,7 @@ Simple demo using Flask-AppBuilder python framework
 > export FLASK_APP=app
 > flask fab create-admin
 
-
+# Running FAB app
+> flask run
 
 ```

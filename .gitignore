@@ -1,0 +1,17 @@
+tmp
+.vscode
+./postgres*
+docker_postgres_init.sql
+postgres
+./docker_postgres_init.sql/
+.env
+node_modules
+data
+firestore_data
+/tmp
+dbdata
+/dbdata
+db_data
+/db_data
+postgresql
+/postgresql
