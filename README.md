@@ -2,10 +2,9 @@
 
 Simple demo using Flask-AppBuilder python framework
 
-## Using venv
+## Using venv (Linux)
 
 ```bash
-
 # Creating venv
 > python -m venv venv
 
@@ -17,7 +16,22 @@ Simple demo using Flask-AppBuilder python framework
 
 # Leave venv
 > deactivate
+```
 
+## Using venv (Windows)
+
+```bash
+# Creating venv
+> python -m venv venv
+
+# Activating venv
+> .\venv\Scripts\activate.bat
+
+# Installing deps from requeriments.txt
+> python -m pip install -r requeriments.txt
+
+# Leave venv
+> deactivate
 ```
 
 ### [More about Python venvs here](https://realpython.com/python-virtual-environments-a-primer/)
@@ -33,7 +47,7 @@ Simple demo using Flask-AppBuilder python framework
 > export FLASK_APP=app
 > flask fab create-admin
 
-# Running FAB app
-> flask run
+# Running FAB app (--debug for hot reload)
+> flask --debug run
 
 ```

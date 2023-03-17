@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/oscarllamas6/Documents/Misc-tech/Python/appbuilder-demo/venv"
+set -gx VIRTUAL_ENV "/mnt/c/Users/oscar/Desktop/TECH REPOS/appbuilder-demo/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

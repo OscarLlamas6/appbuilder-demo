@@ -3,40 +3,31 @@ from flask_appbuilder.models.sqla.interface import SQLAInterface
 from flask_appbuilder import ModelView, ModelRestApi
 
 from . import appbuilder, db
-
-"""
-    Create your Model based REST API::
-
-    class MyModelApi(ModelRestApi):
-        datamodel = SQLAInterface(MyModel)
-
-    appbuilder.add_api(MyModelApi)
+from .models import Empleado
 
 
-    Create your Views::
+#Create your Model based REST API::
+class MyEmpleadoApi(ModelRestApi):
+    datamodel = SQLAInterface(Empleado)
+appbuilder.add_api(MyEmpleadoApi)
 
 
-    class MyModelView(ModelView):
-        datamodel = SQLAInterface(MyModel)
+# Create your Views::
+class MyEmpleadoView(ModelView):
+    datamodel = SQLAInterface(Empleado)
 
 
-    Next, register your Views::
+#Next, register your Views::
+appbuilder.add_view(
+    MyEmpleadoView,
+    "Empleado",
+    icon="fa-folder-open-o",
+    category="My Category",
+    category_icon='fa-envelope'
+)
 
 
-    appbuilder.add_view(
-        MyModelView,
-        "My View",
-        icon="fa-folder-open-o",
-        category="My Category",
-        category_icon='fa-envelope'
-    )
-"""
-
-"""
-    Application wide 404 error handler
-"""
-
-
+# Application wide 404 error handler
 @appbuilder.app.errorhandler(404)
 def page_not_found(e):
     return (
