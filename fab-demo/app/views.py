@@ -3,7 +3,7 @@ from flask_appbuilder.models.sqla.interface import SQLAInterface
 from flask_appbuilder import ModelView, ModelRestApi
 
 from . import appbuilder, db
-from .models import Empleado
+from .models import *
 
 
 #Create your Model based REST API::
@@ -15,6 +15,17 @@ appbuilder.add_api(MyEmpleadoApi)
 # Create your Views::
 class MyEmpleadoView(ModelView):
     datamodel = SQLAInterface(Empleado)
+    label_columns = {
+        "username": "Nombre de usuario",
+        "firstName": "Nombre",
+        "lastName": "Apellido",
+        "birthDate": "Fecha de nacimiento",
+    }
+    description_columns = {
+        "username": "your models name column"
+    }
+    edit_columns = ["firstName", "lastName"]
+    list_columns = ["username", "firstName", "lastName", "birthDate"]
 
 
 #Next, register your Views::

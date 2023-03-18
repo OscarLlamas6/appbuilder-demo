@@ -10,11 +10,13 @@ AuditMixin will add automatic timestamp of created and modified by who
 """
 
 class Empleado(Model):
+    __table_args__ = {"schema": "flaskdb"}
     id = Column(Integer, primary_key=True)
     username = Column(String(100), unique=True, nullable=False)
     firstName = Column(String(100), unique=False, nullable=False)
     lastName = Column(String(100),unique=False, nullable=False)
     birthDate = Column(DateTime, unique=False, nullable=False)
+
 
     def __repr__(self):
         return self.username
