@@ -50,4 +50,7 @@ Simple demo using Flask-AppBuilder python framework
 # Running FAB app (--debug for hot reload)
 > flask --debug run
 
+# Create all DB object
+> flask fab create-db
+
 ```

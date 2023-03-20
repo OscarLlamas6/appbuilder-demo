@@ -19,3 +19,15 @@ compose-logs:
 compose-down:
 	echo "Starting Docker Down"
 	docker-compose -f docker-compose.dev.yaml down --remove-orphans
+
+venv-windows-init:
+	echo "Starting python venv for windows"
+	.\venv\Scripts\activate.bat
+
+venv-linux-init:
+	echo "Starting python venv for linux"
+	source venv/bin/activate
+
+venv-exit:
+	echo "Exiting python venv"
+	deactivate
