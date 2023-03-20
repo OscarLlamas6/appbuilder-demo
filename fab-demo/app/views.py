@@ -1,9 +1,29 @@
 from flask import render_template
 from flask_appbuilder.models.sqla.interface import SQLAInterface
-from flask_appbuilder import ModelView, ModelRestApi, BaseView, expose, has_access
+from flask_appbuilder import ModelView, ModelRestApi, BaseView, expose, has_access, SimpleFormView
+
+from flask_babel import lazy_gettext as _
+from flask import flash
+from .forms import Form1
 
 from . import appbuilder, db
 from .models import *
+
+# Creating Forms
+class MyFormView(SimpleFormView):
+    form = Form1
+    form_title = 'This is my first form view'
+    message = 'My form submitted successfully'
+
+    def form_get(self, form):
+        form.field1.data = 'This was prefilled'
+
+    def form_post(self, form):
+        flash(self.message, 'info')
+
+appbuilder.add_view(MyFormView, "My Form View",
+                    icon="fa-group", label=_("My Form View"), 
+                    category="My Forms", category_icon="fa-cogs")
 
 # Creating BaseViews
 class VistaBase(BaseView):
